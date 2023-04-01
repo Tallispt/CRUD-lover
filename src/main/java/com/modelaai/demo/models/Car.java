@@ -1,5 +1,7 @@
 package com.modelaai.demo.models;
 
+import java.util.Date;
+
 import com.modelaai.demo.dto.CarsDTO;
 
 import jakarta.persistence.Column;
@@ -22,21 +24,19 @@ public class Car {
     this.price = req.price();
     this.modelYear = req.modelYear();
   }
-
   
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
-  
   @Column(length = 50, nullable = false)
   private String model;
 
-  @Column(length = 50, nullable = false)
+  @Column(nullable = false)
   private String manufacturer;
 
   @Column(nullable = false)
-  private String fabricationDate;
+  private Date fabricationDate;
 
   @Column(nullable = false)
   private int price;
